@@ -15,7 +15,7 @@ const smartFeatures = [
 
 export default function AIInCourse() {
   return (
-    <section id="curriculum" className="bg-pattern py-14 sm:py-20" style={{ backgroundColor: "#10044a" }}>
+    <section id="curriculum" className="bg-pattern py-8 sm:py-12" style={{ backgroundColor: "#10044a" }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-4">

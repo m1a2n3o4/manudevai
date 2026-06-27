@@ -1,6 +1,6 @@
 const stats = [
-  { value: "18+", label: "Years in Software Development" },
-  { value: "3,000+", label: "Students Taught" },
+  { value: "12+", label: "Years in Software Development" },
+  { value: "300+", label: "Students Taught" },
   { value: "Active", label: "Working Full Stack Developer" },
 ];
 
@@ -89,15 +89,17 @@ export default function MeetCoach() {
                   LinkedIn
                 </a>
                 <a
-                  href="#"
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all hover:scale-105 border opacity-50 cursor-not-allowed"
+                  href="https://www.youtube.com/@manudevai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all hover:scale-105 border"
                   style={{ borderColor: "#FF000030", color: "#FF0000", backgroundColor: "rgba(255, 0, 0, 0.08)" }}
                 >
                   <svg className="w-4 h-4" fill="#FF0000" viewBox="0 0 24 24">
                     <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" />
                     <polygon fill="#fff" points="9.545,15.568 15.818,12 9.545,8.432" />
                   </svg>
-                  YouTube (Coming Soon)
+                  YouTube
                 </a>
                 <a
                   href="https://wa.me/919553345235"

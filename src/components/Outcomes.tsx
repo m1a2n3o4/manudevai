@@ -43,10 +43,10 @@ const timeline = [
 
 export default function Outcomes() {
   return (
-    <section id="outcomes" className="bg-pattern py-20 sm:py-28" style={{ backgroundColor: "#10044a" }}>
+    <section id="outcomes" className="bg-pattern py-8 sm:py-12" style={{ backgroundColor: "#10044a" }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
             What Will You Have After This Course?
           </h2>
