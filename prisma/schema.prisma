@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Course {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  duration    String
+  level       String
+  price       Float
+  image       String?
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  modules     Module[]
+}
+
+model Module {
+  id       String @id @default(cuid())
+  title    String
+  duration String
+  order    Int
+  courseId String
+  course   Course @relation(fields: [courseId], references: [id])
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  role      String
+  content   String
+  avatar    String?
+  rating    Int      @default(5)
+  createdAt DateTime @default(now())
+}
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  mobile    String
+  email     String?
+  message   String?
+  createdAt DateTime @default(now())
+}
