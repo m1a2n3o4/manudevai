@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-[#ff9202]/20" style={{ backgroundColor: "rgba(16, 4, 74, 0.92)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Hamburger - Left */}
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -33,21 +33,11 @@ export default function Navbar() {
             </svg>
           </button>
 
-          {/* Logo with India flag inside */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2 font-bold flex flex-col items-center">
-            <div className="flex items-center text-2xl sm:text-4xl">
-              <span className="text-white">{"{"}Manu</span>
-              <span className="text-[#ff9202]">DevAI{"}"}</span>
-              <img src="/logos/india.svg" alt="India" className="w-8 h-5 rounded-sm ml-2" />
-            </div>
-            <div className="flex items-center gap-2 mt-0.5">
-              {["React", "Python", "PostgreSQL", "AI"].map((tech, i) => (
-                <span key={tech} className="flex items-center gap-2">
-                  <span className="text-[9px] font-bold tracking-widest uppercase" style={{ color: "rgba(255,146,2,0.75)" }}>{tech}</span>
-                  {i < 3 && <span className="text-[#ff9202]/20 text-[8px]">·</span>}
-                </span>
-              ))}
-            </div>
+          {/* Logo */}
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2 font-bold flex items-center text-2xl sm:text-4xl">
+            <span className="text-white">{"{"}Manu</span>
+            <span className="text-[#ff9202]">DevAI{"}"}</span>
+            <img src="/logos/india.svg" alt="India" className="w-8 h-5 rounded-sm ml-2" />
           </Link>
 
           {/* Right spacer for balance */}

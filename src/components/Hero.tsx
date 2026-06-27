@@ -32,7 +32,7 @@ export default function Hero() {
 
   return (
     <section
-      className="bg-pattern relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="bg-pattern relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
       style={{ backgroundColor: "#10044a" }}
     >
       <style>{`
@@ -48,17 +48,19 @@ export default function Hero() {
           from { transform: rotate(0deg); }
           to   { transform: rotate(360deg); }
         }
+        @keyframes badge-glow {
+          0%, 100% { box-shadow: 0 0 8px rgba(255,146,2,0.4), 0 0 20px rgba(255,146,2,0.15); }
+          50%       { box-shadow: 0 0 18px rgba(255,146,2,0.7), 0 0 40px rgba(255,146,2,0.3); }
+        }
         .shine-btn {
           position: relative;
           padding: 2px;
           border-radius: 12px;
           overflow: hidden;
-          background: #10044a;
         }
         .shine-ring {
           position: absolute;
           inset: -100%;
-          background: conic-gradient(from 0deg, transparent 0%, #ff9202 20%, #fff8 25%, #ff9202 30%, transparent 50%);
           animation: border-spin 2.5s linear infinite;
         }
         .shine-inner {
@@ -66,16 +68,6 @@ export default function Hero() {
           z-index: 1;
         }
       `}</style>
-
-      {/* Badge — anchored near top */}
-      <div className="absolute top-[88px] left-0 right-0 flex justify-center z-10 pointer-events-none">
-        <div
-          className="inline-block px-4 py-1 rounded-full text-xs sm:text-sm font-semibold border"
-          style={{ borderColor: "#ff9202", color: "#ff9202", backgroundColor: "rgba(255,146,2,0.08)" }}
-        >
-          New Batch Starting Soon
-        </div>
-      </div>
 
       {/* Circle — desktop only */}
       <div
@@ -158,11 +150,24 @@ export default function Hero() {
       </div>
 
       {/* Orange accent line at top */}
-      <div className="absolute top-20 left-0 right-0 h-[2px]"
+      <div className="absolute top-16 left-0 right-0 h-[2px]"
         style={{ background: "linear-gradient(90deg, transparent, #ff9202, transparent)" }} />
 
       {/* === CONTENT === */}
       <div className="relative z-10 w-full max-w-4xl mx-auto px-5 sm:px-6 text-center">
+
+        {/* Badge — inside circle, highlighted */}
+        <div
+          className="inline-block mb-4 px-5 py-1.5 rounded-full text-xs sm:text-sm font-bold border tracking-wide uppercase"
+          style={{
+            borderColor: "#ff9202",
+            color: "#ff9202",
+            backgroundColor: "rgba(255,146,2,0.1)",
+            animation: "badge-glow 2s ease-in-out infinite",
+          }}
+        >
+          ✦ New Batch Starting Soon ✦
+        </div>
 
         <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold leading-[1.15] mb-4 tracking-tight">
           <span className="block text-transparent bg-clip-text"
@@ -194,21 +199,25 @@ export default function Hero() {
 
         {/* CTA Buttons — always in one row */}
         <div className="flex flex-row gap-3 justify-center mb-6">
-          <div className="shine-btn flex-1 sm:flex-none">
+          {/* Join Free Workshop — orange bg, white text, shine border */}
+          <div className="shine-btn flex-1 sm:flex-none" style={{ background: "#ff9202" }}>
+            <div className="shine-ring" style={{ background: "conic-gradient(from 0deg, transparent 0%, #fff 20%, rgba(255,255,255,0.6) 25%, #fff 30%, transparent 50%)" }} />
             <a
               href="https://chat.whatsapp.com/E7URSiG2XGq3f0MjnD3j8o"
               target="_blank"
               rel="noopener noreferrer"
-              className="shine-inner block px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-[10px] font-semibold text-xs sm:text-base text-center transition-all hover:scale-105"
-              style={{ backgroundColor: "#ff9202", color: "#10044a" }}
+              className="shine-inner block px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-[10px] font-semibold text-xs sm:text-base text-center text-white transition-all hover:scale-105"
+              style={{ backgroundColor: "#ff9202" }}
             >
               Join Free Workshop
             </a>
           </div>
-          <div className="shine-btn flex-1 sm:flex-none">
+          {/* View Curriculum — white border, white text, shine border */}
+          <div className="shine-btn flex-1 sm:flex-none" style={{ background: "rgba(255,255,255,0.35)" }}>
+            <div className="shine-ring" style={{ background: "conic-gradient(from 0deg, transparent 0%, rgba(255,255,255,0.9) 20%, rgba(255,255,255,0.4) 25%, rgba(255,255,255,0.9) 30%, transparent 50%)" }} />
             <a
               href="/curriculum"
-              className="shine-inner block px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-[10px] font-semibold text-xs sm:text-base text-center transition-all hover:scale-105 text-white"
+              className="shine-inner block px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-[10px] font-semibold text-xs sm:text-base text-center text-white transition-all hover:scale-105"
               style={{ backgroundColor: "#10044a" }}
             >
               View Curriculum
